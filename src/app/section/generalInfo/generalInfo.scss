@@ -1,0 +1,48 @@
+#general-info {
+  .confine {
+    max-width: 1200px;
+    margin: 0 auto;
+    article {
+      text-align: center;
+      .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+          line-height: 100%;
+          font-size: 3rem;
+          margin-top: 150px;
+          width: max-content;
+          color: #bebebe;
+        }
+        p {
+          line-height: 100%;
+          font-size: 2rem;
+          color: #506388;
+          font-family: var(--fontMain);
+        }
+      }
+      .desc {
+        max-width: 70%;
+        margin: 1em auto;
+        color: #bebebe;
+      }
+    }
+    figure {
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+      padding: 3em 0;
+      img {
+        width: 100%;
+        outline: none;
+        object-fit: contain;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.341);
+        border: 3px solid #b1b4a9;
+        height: 500px;
+        background: #415a77;
+      }
+    }
+  }
+}
