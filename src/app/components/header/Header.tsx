@@ -4,22 +4,28 @@ import { CgBrowser } from "react-icons/cg";
 import { SiInternetexplorer } from "react-icons/si";
 import { GrConnectivity } from "react-icons/gr";
 import { FaAddressCard } from "react-icons/fa6";
+import { fetchData } from "@/app/db/db";
 type Props = {};
 
-export default function Header({}: Props) {
+export default async function Header({}: Props) {
+  const data = await fetchData<any>(`
+		*[_type == "general" && preset == 'main']{
+			top,
+		}
+	`);
   return (
     <header id="header">
       <div className="sub">
         <div className="right">
           <p>
-            <GrConnectivity /> VIRTUAL PHANTOM ENTERNTAINMENT LLC -
-            business@vpe.digital
+            <GrConnectivity /> {data.top?.left}
           </p>
         </div>
         <div className="left">
           <p>
-            Virtual Phantom Entertainment LLC 5900 Balcones Drive, Suite 21277
-            Austin, TX 78731
+            {/* Virtual Phantom Entertainment LLC 5900 Balcones Drive, Suite 21277
+            Austin, TX 78731 */}
+            {data.top?.right}
             <FaAddressCard />
           </p>
         </div>

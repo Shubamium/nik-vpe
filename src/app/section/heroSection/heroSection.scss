@@ -25,12 +25,14 @@
         }
         h2 {
           position: relative;
+          text-transform: uppercase;
           color: #bebebe;
         }
         p {
           color: #506388;
           font-family: var(--fontMain);
           font-size: 2.5rem;
+          text-transform: uppercase;
         }
       }
       .desc {
@@ -47,6 +49,7 @@
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.394);
         border-radius: 50%;
         display: block;
+        object-fit: cover;
       }
     }
   } // display: f;

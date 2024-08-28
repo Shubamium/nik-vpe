@@ -1,29 +1,39 @@
 import React from "react";
 import "./generalInfo.scss";
+import { fetchData, urlFor } from "@/app/db/db";
 type Props = {};
 
-export default function GeneralInfo({}: Props) {
+export default async function GeneralInfo({}: Props) {
+  const data = await fetchData<any>(`
+		*[_type == "general" && preset == 'main']{
+			general,
+	}[0]
+	`);
+  console.log(data);
+
   return (
     <section id="general-info">
       <div className="confine">
         <article>
           <div className="head">
-            <h2 className="shine">A HEAD TEXT HERE</h2>
-            <p>PRETITLE EXPLANATION</p>
+            <h2 className="shine">{data.general?.title}</h2>
+            <p>{data.general?.subtitle}</p>
           </div>
-          <p className="desc">
-            Nikulas Wraith is an American VTuber who is a Virtual Phantom
-            trapped inside your computer and uploading 100% goober energy. He
-            has a fun personality to talk about anything with anyone and always
-            makes sure that his community is safe. He started back in September
-            of 2021 and is celebrating his 3 years of content creating this
-            September. Escape reality with him and enjoy a great stream.{" "}
-          </p>
+          <p className="desc">{data.general?.description}</p>
         </article>
         <figure>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img
+            src={data.general?.image_a && urlFor(data.general?.image_a).url()}
+            alt=""
+          />
+          <img
+            src={data.general?.image_b && urlFor(data.general?.image_b).url()}
+            alt=""
+          />
+          <img
+            src={data.general?.image_c && urlFor(data.general?.image_c).url()}
+            alt=""
+          />
         </figure>
       </div>
     </section>

@@ -1,6 +1,10 @@
 #header {
   background: linear-gradient(180deg, #1a2c43 0%, #25395f 100%);
   box-shadow: 0px 10px 80px 50px rgba(0, 0, 0, 0.179);
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
   .sub {
     background: #1e1e1e;
     display: flex;

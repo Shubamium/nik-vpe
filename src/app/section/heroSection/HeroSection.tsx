@@ -1,28 +1,31 @@
 import React from "react";
 import "./heroSection.scss";
+import { fetchData, urlFor } from "@/app/db/db";
 type Props = {};
 
-export default function HeroSection({}: Props) {
+export default async function HeroSection({}: Props) {
+  const data = await fetchData<any>(`
+		*[_type == "general" && preset == 'main']{
+			hero,
+	}[0]
+	`);
+  // console.log(data);
   return (
     <article id="hero">
       <div className="confine">
         <div className="text-part">
           <div className="title">
-            <h2 className="shine">VIRTUAL PHANTOM</h2>
-            <p>ENTERTAINMENT LLC</p>
+            <h2 className="shine">{data.hero?.title}</h2>
+            <p>{data.hero?.subtitle}</p>
             <img src="/decors/hero-decor.png" alt="" className="decor-side" />
           </div>
-          <p className="desc">
-            At Virtual Phantom Entertainment LLC, we strive to make the best
-            content for our viewers and subscribers who enjoy not only fun
-            content on game plays but to have a great conversation as well. We
-            have a great group of VTubers who associate with us and we&apo;re
-            proud to have them with us and to share their experience and
-            entertainment with you.{" "}
-          </p>
+          <p className="desc">{data.hero?.description}</p>
         </div>
         <figure>
-          <img src="/" alt="" />
+          <img
+            src={data.hero?.image && urlFor(data.hero?.image).url()}
+            alt=""
+          />
         </figure>
       </div>
     </article>
