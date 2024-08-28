@@ -53,6 +53,7 @@ export default async function Footer({}: Props) {
         </div>
         <div className="contact-us">
           <h2>CONTACT US</h2>
+          <div className="contact-list"></div>
           <a href={`mailto:${data.email}`} className="contact-box">
             <h3>EMAIL</h3>
             <p>{data.email}</p>

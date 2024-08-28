@@ -52,6 +52,10 @@
     .contact-us {
       display: flex;
       color: #bebebe;
+      position: relative;
+      .contact-list {
+        position: relative;
+      }
       h2,
       h3 {
         color: #bebebe;
@@ -130,5 +134,87 @@
     font-family: var(--fontMain);
     opacity: 0.3;
     padding: 0.25em 1em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #footer {
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #footer {
+    .content {
+      .contact-us {
+        .contact-box {
+          h3 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
+        .contact-list {
+          gap: 1em;
+          display: flex;
+        }
+      }
+    }
+  }
+  #footer .content .contact-us .contact-box p:first-of-type {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer .extra {
+    .confine {
+      p,
+      a {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #footer .content .detail .head {
+    h2 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  #footer .content .contact-us {
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+  }
+  #footer .extra {
+    .confine {
+      p,
+      a {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #footer .extra {
+    .confine {
+      display: flex;
+      flex-direction: column;
+      p,
+      a {
+        font-size: 0.6rem;
+      }
+    }
   }
 }
