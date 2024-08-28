@@ -11,6 +11,8 @@ body {
   background-blend-mode: screen;
   background-size: 350px;
   position: relative;
+  max-width: 100vw;
+  overflow-x: hidden;
   h1,
   h2,
   h3 {
@@ -40,6 +42,8 @@ a {
 main {
   position: relative;
   padding-top: 100px;
+  max-width: 100vw;
+  overflow-x: hidden;
   z-index: 1;
 }
 .shine {

@@ -3,8 +3,8 @@
   box-shadow: 0px 10px 80px 50px rgba(0, 0, 0, 0.179);
   position: fixed;
   top: 0%;
-  width: 100%;
-  z-index: 100;
+  width: 100vw;
+  z-index: 1000;
   .sub {
     background: #1e1e1e;
     display: flex;
@@ -53,6 +53,102 @@
         font-family: var(--fontMain);
         padding-bottom: 0.5em;
         letter-spacing: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #header {
+    .sub {
+      .left,
+      .right {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+    .main {
+      .center {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    .sub {
+      .left,
+      .right {
+        p {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #header {
+    .sub {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .left,
+      .right {
+        width: 100%;
+        p {
+          font-size: 0.4rem;
+          text-align: start;
+        }
+      }
+      .right {
+        p {
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+        }
+      }
+      .left {
+        background: #080d14;
+        p {
+          display: flex;
+        }
+      }
+    }
+    .main {
+      .center {
+        scale: 1.1;
+        display: flex;
+        flex-direction: column;
+        padding: 1em 2em;
+        h1,
+        p {
+          width: max-content;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #header .main {
+    white-space: nowrap;
+    .center {
+      scale: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1em 2em;
+      h1,
+      p {
+        width: max-content;
+        width: 100%;
       }
     }
   }

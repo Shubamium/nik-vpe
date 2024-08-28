@@ -9,6 +9,7 @@ import {
 import "./globals.scss";
 import { CSSProperties } from "react";
 import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -36,6 +37,8 @@ export default function RootLayout({
           } as CSSProperties
         }
       >
+        <Header />
+
         {children}
         <Footer />
       </body>

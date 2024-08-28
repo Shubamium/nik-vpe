@@ -6,7 +6,6 @@ import HeroSection from "./section/heroSection/HeroSection";
 export default function Home() {
   return (
     <main className={""}>
-      <Header />
       <HeroSection />
       <GeneralInfo />
       <GeneralPoints />
