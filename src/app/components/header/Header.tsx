@@ -11,7 +11,7 @@ export default async function Header({}: Props) {
   const data = await fetchData<any>(`
 		*[_type == "general" && preset == 'main']{
 			top,
-		}
+	}[0]
 	`);
   return (
     <header id="header">
