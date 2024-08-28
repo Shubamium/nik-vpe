@@ -18,6 +18,7 @@ export default async function HeroSection({}: Props) {
             <h2 className="shine">{data.hero?.title}</h2>
             <p>{data.hero?.subtitle}</p>
             <img src="/decors/hero-decor.png" alt="" className="decor-side" />
+            <img src="/decors/hero-decor.png" alt="" className="decor-side r" />
           </div>
           <p className="desc">{data.hero?.description}</p>
         </div>
