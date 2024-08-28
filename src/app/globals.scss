@@ -46,6 +46,8 @@ main {
   position: relative;
   &::after {
     content: "";
+    user-select: none;
+    pointer-events: none;
     position: absolute;
     top: 0%;
     left: 0%;
