@@ -7,6 +7,7 @@ export default async function GeneralInfo({}: Props) {
   const data = await fetchData<any>(`
 		*[_type == "general" && preset == 'main']{
 			general,
+			'video':video.asset -> url,
 	}[0]
 	`);
   console.log(data);
@@ -14,6 +15,11 @@ export default async function GeneralInfo({}: Props) {
   return (
     <section id="general-info">
       <div className="confine">
+        {data && data.video && (
+          <div className="main-video">
+            <video src={data.video} controls autoPlay muted></video>
+          </div>
+        )}
         <article>
           <div className="head">
             <h2 className="shine">{data.general?.title}</h2>
@@ -21,6 +27,7 @@ export default async function GeneralInfo({}: Props) {
           </div>
           <p className="desc">{data.general?.description}</p>
         </article>
+
         <figure>
           <img
             src={data.general?.image_a && urlFor(data.general?.image_a).url()}
