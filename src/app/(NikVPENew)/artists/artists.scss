@@ -1,0 +1,104 @@
+#page_artists {
+  #trusted {
+    background: url("/backgrounds/bg-diamond.png");
+    padding-top: 400px;
+    padding-bottom: 300px;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, white, grey, white) 10%;
+    .panel {
+      background: #1b1d2bec;
+      border-top: 2px solid #5b88e2;
+      border-bottom: 2px solid #5b88e2;
+      padding-bottom: 50px;
+      box-shadow:
+        0px 0px 35px 10px inset rgba(255, 255, 255, 0.09),
+        0px 0px 20px black;
+      .shield {
+        width: 100%;
+        margin-top: -150px;
+      }
+      .confine {
+        max-width: min(900px, 90%);
+      }
+
+      .texts {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 3em;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+        hr {
+          margin: 1em 0;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  #person-list {
+    background: url("/backgrounds/bg-x.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 100px 0;
+    .confine {
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
+      max-width: min(1200px, 90%);
+      padding: 90px 0;
+      .pl {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        background: #1b1d2bdd;
+        border: 3px solid #5b88e2;
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.304);
+        .pfp {
+          background: #141414;
+        }
+
+        .detail {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .d-d {
+            box-shadow: 0px 0px 35px 10px inset rgba(255, 255, 255, 0.09);
+            padding: 4em;
+            min-height: 190px;
+            max-width: 100%;
+            h2 {
+              font-size: 2.4rem;
+            }
+            p {
+              font-size: 1.3rem;
+            }
+          }
+          .d-f {
+            display: flex;
+            align-items: flex-end;
+            background: #161b2e;
+            padding: 0.55em;
+            gap: 1em;
+            justify-content: flex-end;
+
+            .closed {
+              filter: saturate(0%) brightness(30%);
+              &:hover {
+                user-select: none;
+                pointer-events: none;
+              }
+            }
+            img {
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

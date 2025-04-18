@@ -1,0 +1,83 @@
+#page_edu {
+  // min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  // min-height: 500vh;
+  #vtuber-education {
+    background: url("/backgrounds/bg-diamond.png");
+    background-size: contain;
+    padding-top: 300px;
+    padding-bottom: 140px;
+    .confine {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 2em;
+    }
+    .l {
+      border: 2px solid #5b88e2;
+      background: #1b1d2bf2;
+      padding: 3em;
+      box-shadow:
+        0px 0px 35px 10px inset rgba(255, 255, 255, 0.09),
+        0px 0px 20px black;
+
+      border: 3px solid #5b88e2;
+      min-height: 400px;
+      h2 {
+        font-size: 2.4rem;
+      }
+      p {
+        margin-bottom: 1em;
+        font-size: 1.3rem;
+      }
+    }
+    .r {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 1em;
+    }
+  }
+
+  #program-list {
+    padding: 100px 0;
+    background: url("/backgrounds/bg-x.png");
+    border-top: 5px solid;
+    border-image: linear-gradient(to right, white, grey, white) 20%;
+    background-size: cover;
+    #pl-h {
+      max-width: 400px;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .pl-l {
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
+      margin: 3em 0;
+      .pl {
+        display: grid;
+        grid-template-columns: 400px 2fr;
+        gap: 3em;
+
+        .l {
+          aspect-ratio: 16 / 9;
+        }
+
+        .r {
+          text-align: center;
+          font-size: 1.3rem;
+          p {
+            padding-bottom: 1em;
+          }
+
+          .cl {
+            margin-top: 2em;
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+  }
+}

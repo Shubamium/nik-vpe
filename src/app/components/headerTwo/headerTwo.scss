@@ -1,0 +1,57 @@
+#header-alt {
+  background: url("/backgrounds/carpet.png");
+  background-size: 500px;
+  // min-height: 150px;
+  padding: 2em;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(to right, white, #9d9d9d, white) 1%;
+  margin-top: -50px;
+  margin-bottom: 100px;
+  position: fixed;
+  z-index: 100;
+  top: 0%;
+  width: 100%;
+  .confine {
+    // width: 1000px;
+    max-width: min(1000px, 90%);
+    margin: 0 auto;
+    transform: translateY(50%);
+    #alt-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: -10px;
+
+      .btn-nav {
+        color: #b0b6c2;
+        border: 2px solid #b0b6c2;
+        padding: 0.55em 2em;
+        background: url("/backgrounds/zigzag.png"), #24252c;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+        border-radius: 0.5em 0.5em 0 0;
+        font-weight: bold;
+        &:hover {
+          transform: translateY(-8px);
+          scale: 1;
+        }
+      }
+    }
+    .title-part {
+      background: linear-gradient(to bottom, #012240, #131824);
+      padding: 1em;
+      border: 3px solid #172d58;
+      border-radius: 1em;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.446);
+      h1 {
+        text-align: center;
+        color: #ffc068;
+        font-size: 3rem;
+        border-radius: 4em;
+      }
+    }
+  }
+}

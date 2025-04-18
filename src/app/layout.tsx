@@ -37,10 +37,7 @@ export default function RootLayout({
           } as CSSProperties
         }
       >
-        <Header />
-
         {children}
-        <Footer />
       </body>
     </html>
   );

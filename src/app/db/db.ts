@@ -5,7 +5,7 @@ export const client = createClient({
   projectId: "jh2ng2jx",
   dataset: "production",
   apiVersion: "2023-05-03",
-  useCdn: false,
+  useCdn: true,
 });
 
 const builder = imageUrlBuilder(client);
@@ -16,7 +16,7 @@ export function urlFor(source: any) {
 
 const config = {
   next: {
-    revalidate: 5,
+    revalidate: 3600,
   },
 };
 export function fetchData<T>(grocQuery: string) {

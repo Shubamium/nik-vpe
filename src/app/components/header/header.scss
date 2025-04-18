@@ -58,6 +58,34 @@
   }
 }
 
+.main-navigation {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+  gap: 1em;
+  background: red;
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+  width: 100%;
+  background: #080d147f;
+  color: #959790;
+  text-transform: uppercase;
+  padding: 1em 0;
+  backdrop-filter: blur(4px);
+  box-shadow: 0px 0px 10px rgba(7, 6, 14, 0.704);
+  .btn-main {
+    font-size: 1.5rem;
+    padding: 0.15em 1em;
+    background: #1b263b;
+    border: 2px solid #bebebe00;
+    &:hover {
+      color: #bebebe;
+      background: #25395f;
+      border: 2px solid #bebebe;
+    }
+  }
+}
 @media screen and (max-width: 1280px) {
   #header {
     .sub {
