@@ -70,7 +70,7 @@ export default async function page({}: Props) {
               <PortableText value={talents?.ls?.r?.d} />
             </div>
           </div>
-          <div className="kml">
+          <div className="ml">
             <Media
               mt={talents?.ls?.ma?.mt}
               ytd={talents?.ls?.ma?.ytd}
