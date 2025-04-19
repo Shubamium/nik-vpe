@@ -24,7 +24,7 @@ export default function HeaderTwo({ title }: { title: string }) {
             Artists
           </Link>
         </nav>
-        <div className="title-part">
+        <div className="title-part shine">
           <h1>{title}</h1>
         </div>
       </div>

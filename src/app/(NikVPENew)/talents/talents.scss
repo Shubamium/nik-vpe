@@ -17,6 +17,9 @@
         width: auto;
         aspect-ratio: 16/9;
         margin-bottom: 1em;
+        img {
+          object-fit: cover;
+        }
       }
 
       text-align: center;
@@ -56,6 +59,9 @@
         .media {
           // min-width: 150px;
           aspect-ratio: 16/9;
+          img {
+            object-fit: cover;
+          }
         }
         height: 100%;
       }
@@ -84,13 +90,16 @@
         height: 100%;
         width: auto;
         aspect-ratio: 16/9;
+        img {
+          object-fit: cover;
+        }
       }
     }
     .panel {
       background: url("/backgrounds/carpet-l.png");
       background-size: 400px;
       // background-blend-mode: lighten;
-      padding: 1em;
+      padding: 1.5em;
       border: 2px solid #b0b6c2;
       border-radius: 0 0.3em 0;
       background-color: #26293b;
@@ -99,8 +108,9 @@
       }
       h2 {
         color: #ffc068;
-        margin: 0.25em;
-        font-size: 1.5rem;
+        margin: 0.25em 0;
+        font-size: 1.8rem;
+        line-height: 80%;
       }
       p {
         color: rgba(255, 255, 255, 0.655);
@@ -117,6 +127,11 @@
       display: flex;
       margin: 2em 0;
       height: 200px;
+      .media {
+        img {
+          object-fit: cover;
+        }
+      }
     }
   }
 }

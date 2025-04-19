@@ -5,14 +5,14 @@ import useMeasure from "react-use-measure";
 
 type Props = {};
 
-export default function Scroller({}: Props) {
+export default function Scroller({ imgList }: { imgList: string[] }) {
   const x = useMotionValue(0);
   const [scope, animate] = useAnimate();
   const [ref, bounds] = useMeasure();
 
   useEffect(() => {
     const target = -bounds.width;
-    const amount = 5;
+    const amount = imgList.length ?? 5;
     animate(x, [0, target], {
       duration: amount * 3,
       repeat: Infinity,
@@ -25,25 +25,34 @@ export default function Scroller({}: Props) {
   return (
     <motion.div className="scroller" ref={scope} style={{ x: x }}>
       <div className="scroll" ref={ref}>
-        s<div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
+        {imgList &&
+          imgList.map((img, i) => {
+            return (
+              <div className="media" key={i}>
+                <img src={img} alt="" />
+              </div>
+            );
+          })}
       </div>
       <div className="scroll">
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
+        {imgList &&
+          imgList.map((img, i) => {
+            return (
+              <div className="media" key={i + "second"}>
+                <img src={img} alt="" />
+              </div>
+            );
+          })}
       </div>
       <div className="scroll">
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
-        <div className="media"></div>
+        {imgList &&
+          imgList.map((img, i) => {
+            return (
+              <div className="media" key={i + "third"}>
+                <img src={img} alt="" />
+              </div>
+            );
+          })}
       </div>
     </motion.div>
   );

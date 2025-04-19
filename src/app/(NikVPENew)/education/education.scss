@@ -13,6 +13,12 @@
       grid-template-columns: 1.4fr 1fr 1fr;
       gap: 2em;
     }
+    .media {
+      img {
+        object-fit: cover;
+      }
+    }
+
     .l {
       border: 2px solid #5b88e2;
       background: #1b1d2bf2;
@@ -35,6 +41,10 @@
       display: grid;
       grid-template-rows: 1fr 1fr;
       gap: 1em;
+
+      .media {
+        height: 300px;
+      }
     }
   }
 
@@ -68,12 +78,15 @@
         .r {
           text-align: center;
           font-size: 1.3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           p {
             padding-bottom: 1em;
           }
 
           .cl {
-            margin-top: 2em;
+            // margin-top: 2em;
             opacity: 0.4;
           }
         }

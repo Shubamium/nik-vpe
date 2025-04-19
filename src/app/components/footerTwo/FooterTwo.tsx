@@ -1,9 +1,11 @@
 import React from "react";
 import "./footerTwo.scss";
 import { FaTwitch, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { PortableText } from "next-sanity";
 type Props = {};
 
-export default function FooterTwo({}: Props) {
+type CenterType = "contact" | "fiverr" | "text";
+export default function FooterTwo({ f }: { f: any }) {
   const centerPart = {
     contact: (
       <div id="contact">
@@ -44,24 +46,25 @@ export default function FooterTwo({}: Props) {
         </div>
       </div>
     ),
+    text: (
+      <div className="text">
+        <p>{f && f.ct_t}</p>
+      </div>
+    ),
   };
 
   return (
     <footer id="footer-alt">
       <div className="l pt">
-        <h2>TALENTS OF VPE</h2>
-        <p>
-          <strong>All business inquiries please send to:</strong>
-        </p>
-        <p>business@vpe.digital</p>
+        <h2>{f?.lf?.title}</h2>
+        <PortableText value={f?.lf?.description} />
       </div>
-      <div className="c">{centerPart["fiverr"]}</div>
+      {f && f.ct && (
+        <div className="c">{centerPart[(f.ct as CenterType) ?? "text"]}</div>
+      )}
       <div className="r pt">
-        <h2>NOTICE ◇</h2>
-        <p>
-          Not Allowed to copy images and use for A.I. training or sale for
-          profit
-        </p>
+        <h2>{f?.rf?.title}</h2>
+        <PortableText value={f?.rf?.description} />
       </div>
     </footer>
   );
