@@ -46,7 +46,10 @@ export default async function page({}: Props) {
                 </div>
                 <div className="detail">
                   <div className="d-d">
-                    <h2>{p.n}</h2>
+                    <div className="ht">
+                      <h2>{p.n}</h2>
+                      <p className="r">{p.r}</p>
+                    </div>
                     <hr className="ll" />
                     <p>{p.d}</p>
                   </div>

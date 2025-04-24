@@ -72,11 +72,28 @@
             min-height: 190px;
             height: 100%;
             max-width: 100%;
+
+            .ht {
+              display: flex;
+              gap: 1em;
+            }
             h2 {
               font-size: 2.4rem;
             }
             p {
               font-size: 1.3rem;
+            }
+            .r {
+              color: white;
+              background: url("/backgrounds/bg-x.png");
+              border: 2px solid white;
+              display: flex;
+              align-items: center;
+              padding: 0em 1.2em;
+              font-size: 1.4rem;
+              border-radius: 2em;
+              font-weight: bold;
+              // margin: 1em 0;
             }
           }
           .d-f {
