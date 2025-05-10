@@ -6,6 +6,8 @@ import { GrConnectivity } from "react-icons/gr";
 import { FaAddressCard } from "react-icons/fa6";
 import { fetchData } from "@/app/db/db";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+import MainNav from "./MainNav";
 type Props = {};
 
 export default async function Header({}: Props) {
@@ -39,20 +41,7 @@ export default async function Header({}: Props) {
           </div>
         </div>
       </header>
-      <nav className="main-navigation">
-        <Link href={"/education"} className="btn btn-main">
-          Education
-        </Link>
-        <Link href={"/commissions"} className="btn btn-main">
-          Commissions
-        </Link>
-        <Link href={"/talents"} className="btn btn-main">
-          Talents
-        </Link>
-        <Link href={"/artists"} className="btn btn-main">
-          Artists
-        </Link>
-      </nav>
+      <MainNav />
     </>
   );
 }

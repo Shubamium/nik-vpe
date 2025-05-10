@@ -1,3 +1,4 @@
+@import "mixins";
 #page_artists {
   #trusted {
     background: url("/backgrounds/bg-diamond.png");
@@ -16,6 +17,9 @@
       .shield {
         width: 100%;
         margin-top: -150px;
+        @include mq(768) {
+          margin-top: -100px;
+        }
       }
       .confine {
         max-width: min(900px, 90%);
@@ -25,16 +29,25 @@
         margin: 1em 0;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 3em;
-
+        gap: 100px;
+        @include mq(550) {
+          grid-template-columns: 1fr;
+          text-align: justify;
+        }
         h2 {
           font-size: 2.5rem;
+          @include mq(550) {
+            font-size: 1.8rem;
+          }
         }
         hr {
           margin: 1em 0;
         }
         p {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
+          @include mq(550) {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -51,14 +64,23 @@
       gap: 3em;
       max-width: min(1200px, 90%);
       padding: 90px 0;
+
       .pl {
         display: grid;
         grid-template-columns: 1fr 2fr;
         background: #1b1d2bdd;
         border: 3px solid #5b88e2;
         box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.304);
+        @include mq(768) {
+          display: flex;
+          flex-direction: column;
+        }
+
         .pfp {
           background: #141414;
+          img {
+            object-fit: cover;
+          }
         }
 
         .detail {
@@ -73,15 +95,43 @@
             height: 100%;
             max-width: 100%;
 
+            @include mq(1024) {
+              padding: 3em;
+            }
+            @include mq(550) {
+              padding: 2em;
+            }
+            @include mq(420) {
+              padding: 1em;
+            }
             .ht {
               display: flex;
               gap: 1em;
+              @include mq(550) {
+                flex-wrap: wrap-reverse;
+              }
             }
             h2 {
               font-size: 2.4rem;
+
+              @include mq(1024) {
+                font-size: 2rem;
+              }
+              @include mq(550) {
+                font-size: 1.5rem;
+              }
             }
             p {
               font-size: 1.3rem;
+              @include mq(420) {
+                font-size: 0.9rem;
+              }
+              @include mq(550) {
+                font-size: 1rem;
+              }
+              @include mq(420) {
+                text-align: justify;
+              }
             }
             .r {
               color: white;
@@ -94,6 +144,11 @@
               border-radius: 2em;
               font-weight: bold;
               // margin: 1em 0;
+              @include mq(550) {
+                width: 100%;
+                text-align: center;
+                font-size: 1.1rem;
+              }
             }
           }
           .d-f {
@@ -106,6 +161,13 @@
 
             img {
               height: 50px;
+            }
+            @include mq(550) {
+              img {
+                width: 100%;
+                object-fit: contain;
+              }
+              justify-content: center;
             }
           }
         }

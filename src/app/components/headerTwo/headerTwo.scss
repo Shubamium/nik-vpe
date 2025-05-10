@@ -1,3 +1,4 @@
+@import "mixins";
 #header-alt {
   background: url("/backgrounds/carpet.png");
   background-size: 500px;
@@ -11,11 +12,16 @@
   z-index: 100;
   top: 0%;
   width: 100%;
+
   .confine {
     // width: 1000px;
     max-width: min(1000px, 90%);
     margin: 0 auto;
     transform: translateY(50%);
+
+    @include mq(550) {
+      max-width: 100%;
+    }
     #alt-navigation {
       display: flex;
       align-items: center;
@@ -32,9 +38,25 @@
         padding-bottom: 1em;
         border-radius: 0.5em 0.5em 0 0;
         font-weight: bold;
+
+        @include mq(550) {
+          padding: 0.25em 1em;
+          padding-bottom: 1em;
+        }
         &:hover {
           transform: translateY(-8px);
           scale: 1;
+        }
+        @include mq(1024) {
+          display: none;
+        }
+      }
+      .menu {
+        @include mq(1024) {
+          display: block;
+        }
+        @include mq(1024, min) {
+          display: none;
         }
       }
     }
@@ -46,12 +68,57 @@
       position: relative;
       z-index: 1;
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.446);
+
       h1 {
         text-align: center;
         color: #ffc068;
         font-size: 3rem;
         border-radius: 4em;
+
+        @include mq(1024) {
+          font-size: clamp(1rem, 5vw, 3rem);
+        }
       }
     }
+  }
+}
+
+.fs-nav {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.336);
+  backdrop-filter: blur(4px);
+  top: 0%;
+  left: 0%;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.25em;
+  .btn-nav {
+    background: url("/backgrounds/zigzag.png"), #012240;
+    border-bottom: 2px solid white;
+    width: 100%;
+    color: #ffc068;
+    text-shadow: none;
+    padding: 0.25em 1em;
+    font-size: clamp(1rem, 8vw, 3rem);
+    font-weight: bold;
+    font-family: var(--fontMain);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  transition: all 500ms ease;
+  &.vis {
+    transform: translateY(0%);
+  }
+  &.clo {
+    transform: translateY(100%);
+    opacity: 0;
   }
 }

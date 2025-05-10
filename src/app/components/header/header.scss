@@ -1,3 +1,4 @@
+@import "mixins";
 #header {
   background: linear-gradient(180deg, #1a2c43 0%, #25395f 100%);
   box-shadow: 0px 10px 80px 50px rgba(0, 0, 0, 0.179);
@@ -74,11 +75,39 @@
   padding: 1em 0;
   backdrop-filter: blur(4px);
   box-shadow: 0px 0px 10px rgba(7, 6, 14, 0.704);
+  @include mq(1024) {
+    flex-wrap: wrap;
+  }
+  @include mq(550) {
+    top: 30px;
+    .btn-main {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &.vis {
+    .full {
+      display: flex;
+      scale: 1 1;
+    }
+  }
+  &.clo {
+    .full {
+      display: none;
+      scale: 1 0;
+    }
+  }
   .btn-main {
     font-size: 1.5rem;
     padding: 0.15em 1em;
     background: #1b263b;
     border: 2px solid #bebebe00;
+    transition: all 250ms ease;
+    @include mq(550) {
+      font-size: 1.2rem;
+      justify-content: center;
+    }
     &:hover {
       color: #bebebe;
       background: #25395f;

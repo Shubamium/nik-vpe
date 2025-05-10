@@ -1,7 +1,8 @@
+@import "mixins";
 #page_edu {
   // min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   // min-height: 500vh;
   #vtuber-education {
     background: url("/backgrounds/bg-diamond.png");
@@ -12,6 +13,13 @@
       display: grid;
       grid-template-columns: 1.4fr 1fr 1fr;
       gap: 2em;
+      @include mq(1024) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include mq(768) {
+        display: flex;
+        flex-direction: column;
+      }
     }
     .media {
       img {
@@ -29,19 +37,44 @@
 
       border: 3px solid #5b88e2;
       min-height: 400px;
+      @include mq(420) {
+        padding: 1.5em;
+      }
       h2 {
         font-size: 2.4rem;
+        @include mq(550) {
+          font-size: 2rem;
+        }
+        @include mq(420) {
+          font-size: 1.4rem;
+        }
       }
       p {
         margin-bottom: 1em;
         font-size: 1.3rem;
+
+        @include mq(550) {
+          font-size: 1.1rem;
+        }
+        @include mq(420) {
+          font-size: 1rem;
+        }
       }
     }
     .r {
       display: grid;
       grid-template-rows: 1fr 1fr;
       gap: 1em;
-
+      @include mq(1024) {
+        display: flex;
+        justify-content: center;
+        grid-column: span 2;
+        width: 100%;
+        margin: 0 auto;
+      }
+      @include mq(420) {
+        gap: 0;
+      }
       .media {
         height: 300px;
       }
@@ -71,6 +104,10 @@
         grid-template-columns: 400px 2fr;
         gap: 3em;
 
+        @include mq(1024) {
+          grid-template-columns: 1fr;
+        }
+
         .l {
           aspect-ratio: 16 / 9;
         }
@@ -81,6 +118,10 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @include mq(550) {
+            font-size: 1.1rem;
+            margin-bottom: 3em;
+          }
           p {
             padding-bottom: 1em;
           }

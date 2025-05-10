@@ -1,3 +1,4 @@
+@import "mixins";
 #page_talents {
   #talent-intro {
     background: url("/backgrounds/bg-diamond.png");
@@ -17,6 +18,10 @@
         width: auto;
         aspect-ratio: 16/9;
         margin-bottom: 1em;
+        @include mq(550) {
+          width: 100%;
+          height: auto;
+        }
         img {
           object-fit: cover;
         }
@@ -26,6 +31,9 @@
       text-shadow: 0px 0px 5px black;
       h2 {
         font-size: 3.5rem;
+        @include mq(550) {
+          font-size: clamp(2rem, 8vw, 3.5rem);
+        }
       }
       hr {
         margin: 1em 0;
@@ -33,6 +41,10 @@
       p {
         font-size: 1.5rem;
         max-width: 70%;
+        @include mq(550) {
+          max-width: 100%;
+          font-size: 1.2rem;
+        }
       }
     }
     padding-bottom: 1em;
@@ -52,7 +64,9 @@
       height: 200px;
       margin: 2em 0;
       gap: 1em;
-
+      @include mq(420) {
+        height: 120px;
+      }
       .scroll {
         display: flex;
         gap: 1em;
@@ -75,6 +89,12 @@
       h2 {
         font-size: 3rem;
         text-align: center;
+        @include mq(550) {
+          font-size: 2rem;
+        }
+        @include mq(420) {
+          font-size: 1.4rem;
+        }
       }
     }
 
@@ -86,6 +106,9 @@
       min-height: 300px;
       align-items: center;
       margin: 2em 0;
+      @include mq(1024) {
+        grid-template-columns: 1fr;
+      }
       .media {
         height: 100%;
         width: auto;
@@ -111,10 +134,23 @@
         margin: 0.25em 0;
         font-size: 1.8rem;
         line-height: 80%;
+
+        @include mq(550) {
+          font-size: 1.4rem;
+        }
+        @include mq(420) {
+          text-align: center;
+        }
       }
       p {
         color: rgba(255, 255, 255, 0.655);
         font-size: 1.5rem;
+        @include mq(550) {
+          font-size: 1.2rem;
+        }
+        @include mq(420) {
+          text-align: center;
+        }
         strong {
           color: white;
         }
@@ -122,11 +158,14 @@
     }
 
     .ml {
-      display: grid;
       gap: 1em;
       display: flex;
       margin: 2em 0;
       height: 200px;
+      @include mq(550) {
+        flex-wrap: wrap;
+        height: auto;
+      }
       .media {
         img {
           object-fit: cover;

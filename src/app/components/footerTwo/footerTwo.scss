@@ -1,3 +1,5 @@
+@import "mixins";
+
 #footer-alt {
   display: flex;
   justify-content: space-between;
@@ -6,9 +8,14 @@
 
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.483);
   padding: 1em;
-  .l {
-  }
+  // .l {
+  // }
 
+  @include mq(1024) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+  }
   .c {
     text-align: center;
     align-self: center;
@@ -57,7 +64,18 @@
     border: 2px solid #b0b6c2;
     border-radius: 0 0.3em 0;
     min-width: 500px;
+    @include mq(420) {
+      padding: 1em;
+    }
+    @include mq(1440) {
+      max-width: 400px;
+      min-width: 0;
+    }
 
+    @include mq(1024) {
+      width: 100%;
+      max-width: 100%;
+    }
     &.r {
       text-align: right;
     }
